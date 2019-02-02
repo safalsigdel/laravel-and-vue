@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue example</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p v-html="addMessage"></p>
+		<input type="text" name="safal" v-model="safal">
+		<p>{{safal}}</p>
+		<!-- <p style="color:red">{{hello}}</p> -->
+		<p v-on:click='safa'>Sigdel</p>
+		<form method="get" action="/">
+			<input type="submit"  value="ok" @click.prevent='ok'>
+		</form>
+
+	</div>
+
+	<script type="text/javascript">
+		
+		function add(a,b)
+		{
+			return a+b;
+		}
+
+		var app = new Vue({
+			el:'#app',
+			data:{addMessage:'<b>'+add(4,5)+'</b>',
+
+					safal:'',
+				},
+				methods:{
+					safa:function(){
+						this.safal = 'hello agian'
+						console.log('ok again')
+					},
+					ok:function(){
+					console.log('ok method from view');
+				}
+				}
+				
+		});
+
+	</script>
+
+</body>
+</html>
